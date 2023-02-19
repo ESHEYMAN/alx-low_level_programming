@@ -1,17 +1,18 @@
 #include <stdio.h>
 /**
- * main - A program that print the alphabets in  lowercase then in uppercacase
+ * main - prints the alphabet in lowercae, and then in uppercase,
+ * followed by a new line
  * Return: 0 (SUCCESS)
  */
 
-int maim(void)
+int main(void)
 {
 char letter;
-for (letter = 'a'; letter <= 'z'; letter++);
+for (letter = 'a'; letter <= 'z'; letter++)
 {
 putchar(letter);
 }
-for (letter = 'A'; letter <= 'Z'; letter++);
+for (letter = 'A'; letter <= 'Z'; letter++)
 {
 putchar(letter);
 }
