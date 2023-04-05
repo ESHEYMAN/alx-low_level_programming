@@ -1,9 +1,9 @@
 #include "list.h"
-#include <stdio.h>
 
 /**
  *  print_listint - print the element of listint_t list
  *  @h: point to the first node
+ *
  *  Return: thew number of nodes
  */
 
