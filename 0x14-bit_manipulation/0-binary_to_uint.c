@@ -7,33 +7,19 @@
  *
  * Return: the converted number or 0.
  */
-
 unsigned int binary_to_uint(const char *b)
-	unsigned int binary_to_uint(const char *b)
 {
-	unsigned int ui;
-	int len, base_two;
+int d;
+unsigned int dec_va = 0;
 
-	if (!b)
-		return (0);
+for (d = 0; b[d]; d++)
+{
+if (b[d] < '0' || b[d] > '1')
+return (0);
+dec_va = 2 * dec_va + (b[d] - '0');
+}
+if (!b)
+return (0);
 
-	ui = 0;
-
-	for (len = 0; b[len] != '\0'; len++)
-		;
-
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
-	{
-		if (b[len] != '0' && b[len] != '1')
-		{
-			return (0);
-		}
-
-		if (b[len] & 1)
-		{
-			ui += base_two;
-		}
-	}
-
-	return (ui);
+return (dec_va);
 }
