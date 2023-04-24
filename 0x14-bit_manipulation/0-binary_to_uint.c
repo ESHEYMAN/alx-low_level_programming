@@ -12,17 +12,21 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int val = 0;
-	int m = 0;
+	unsigned int m = 1;
+	unsigned int i = 0;
+	int q;
 
-	if (b == NULL)
-		return (0);
+	len = srtlen(b);
 
-	while (b[m] == '0' || b[m] == '1')
+	for (q = len - 1; q >= 0; q--)
 	{
-		val <<= 1;
-		val += b[m] - '0';
-		m++
+		if (b[q] != '0' && b[q] != '1')
+			return (0);
+	if (b[q] == '1')
+	{
+		i += m;
 	}
-	return (val);
+	m *= 2;
+	}
+	return (i);
 }
