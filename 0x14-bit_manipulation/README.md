@@ -1,1 +1,1 @@
-A readme of this project describing what each project is
+A readme describingbthis particular project
