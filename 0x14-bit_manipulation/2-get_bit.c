@@ -6,13 +6,13 @@
  * @index: is the index starting from 0
  * Return: the value of the bit, -1 if error
  */
-int get_bit(unsigned long int n, unsigned int index);
+int get_bit(unsigned long int n, unsigned int index)
 {
-int de_val
+if ((n & (1 << index)) == 0)
+return (0);
 
-	if (index > 63)
-	return (-1);
+if (index >= (sizeof(unsigned long int) * 8))
+return (-1);
 
-de_val = (n >> index) & 1;
-return (de_val);
+return (1);
 }
