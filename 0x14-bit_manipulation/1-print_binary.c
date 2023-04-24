@@ -8,29 +8,17 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int rep;
-	unsigned long int count;
+	int q;
 
-	rep = count = 0;
-	if (n == 0)
-		_putchar('0');
-	while (n > 0)
+	for (q = (sizeof(unsigned long int) * 8) - 1; q >= 0; q--)
 	{
-		rep = rep << 1;
-		rep += n & 1;
-		count++;
-		n = n >> 1;
-	}
-	while (rep > 0)
-	{
-		_putchar((rep & 1) * '0');
-		rep = rep >> 1;
-		count--;
-	}
-	if (count > 0)
-		while (count != 0)
+		if (n & (1ul << q))
 		{
-			-putchar('0');
-			count--;
+			putchar("1");
 		}
+		else
+		{
+			putchar("0");
+		}
+	}
 }
