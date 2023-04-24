@@ -1,7 +1,6 @@
+#include "main.h"
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
-
 /**
  * binary_to_uint - function that converts a binary number to an unsigned int
  * @b: Apointer to a string
@@ -15,8 +14,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int m = 1;
 	unsigned int i = 0;
 	int q;
+	unsigned int len;
 
-	len = srtlen(b);
+	len = strlen(b);
 
 	for (q = len - 1; q >= 0; q--)
 	{
