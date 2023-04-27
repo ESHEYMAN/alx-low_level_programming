@@ -9,11 +9,10 @@
 ssize_t read_textfile(const char *filename, size_t letters);
 {
 int cd;
-ssize_t nre;
-ssize_t nwr;
+ssize_t _read, _write;
 char *buffer;
 
-if (filename == NULL)
+if (!filename == NULL)
 return (0);
 
 cd = open(filename, O_RDONLY);
@@ -24,10 +23,10 @@ buffer = malloc(sizeof(char) * letters);
 if (buffer == NULL)
 return (0);
 
-nre = read(cd, buffer, letters);
-nwr = write(STDOUT_FILENO, buffer, nre);
+_read = read(cd, buffer, letters);
+_write = write(STDOUT_FILENO, buffer, _read);
 
 free(buffer);
 close(cd);
-return (nwr);
+return (_write);
 }
